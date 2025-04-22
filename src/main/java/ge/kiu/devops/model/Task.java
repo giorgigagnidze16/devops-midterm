@@ -4,6 +4,9 @@ package ge.kiu.devops.model;
  * Task DTO.
  */
 public class Task {
+  /**
+   * description.
+   */
   private String description;
 
   /**
@@ -12,12 +15,17 @@ public class Task {
   public Task() {}
 
   /**
-   * Task Constructor.
+   * @param description Task Constructor.
    */
   public Task(String description) {
     this.description = description;
   }
 
+  /**
+   * Gets description.
+   *
+   * @return description
+   */
   public String getDescription() {
     return description;
   }

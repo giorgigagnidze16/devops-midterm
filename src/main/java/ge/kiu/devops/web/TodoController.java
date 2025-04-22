@@ -13,7 +13,11 @@ import org.springframework.web.bind.annotation.PostMapping;
  * Todo controller.
  */
 @Controller
-public class TodoController {
+public class TodoController
+{
+  /**
+   * This did not need a comment.
+   */
   private final List<Task> tasks = new ArrayList<>();
 
   /**
@@ -23,7 +27,8 @@ public class TodoController {
    * @return html tasks page
    */
   @GetMapping("/tasks")
-  public String getTasks(Model model) {
+  public String getTasks(Model model)
+  {
     model.addAttribute("tasks", tasks);
     model.addAttribute("newTask", new Task());
     return "tasks";
@@ -36,7 +41,8 @@ public class TodoController {
    * @return html tasks page
    */
   @PostMapping("/tasks")
-  public String addTask(@ModelAttribute Task task) {
+  public String addTask(@ModelAttribute Task task)
+  {
     tasks.add(task);
     return "redirect:/tasks";
   }
