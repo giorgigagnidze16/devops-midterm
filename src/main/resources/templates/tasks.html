@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <title>To-Do List</title>
 </head>
 <body>
 <h1>My To-Do List</h1>
 <form th:action="@{/tasks}" method="post" th:object="${newTask}">
-    <input type="text" th:field="*{description}" placeholder="Enter task" />
+    <label>
+        <input type="text" th:field="*{description}" placeholder="Enter task" />
+    </label>
     <button type="submit">Add Task</button>
 </form>
 <ul>
