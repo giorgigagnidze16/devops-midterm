@@ -10,7 +10,7 @@ and rollback—all on local Windows machine (via WSL2)—using:
 - A simple **dashboard** to visualize health status  
 
 ## Tools & Technologies
-- **Java 21** & **Spring Boot**  
+- **Java 21** & **Spring Boot**, JUnit, Spring Boot Starter Test  
 - **Maven** (build, tests, Checkstyle)  
 - **Git** & **GitHub Actions** (CI pipeline)  
 - **Terraform** (artifact “deployment” to Blue/Green folders)  
