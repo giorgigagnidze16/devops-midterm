@@ -1,0 +1,26 @@
+- hosts: localhost
+  connection: local
+  gather_facts: false
+
+  vars:
+    project_root: /mnt/c/Users/giorg/Desktop/devops-midterm
+
+  tasks:
+    - name: Bootstrap Java & Maven via raw apt-get
+      become: true
+      raw: |
+        apt-get update -qq
+        DEBIAN_FRONTEND=noninteractive apt-get install -y openjdk-21-jdk maven
+
+    - name: Re-gather facts under Python3
+      setup:
+
+    - name: Create deployment directories
+      file:
+        path: "{{ item }}"
+        state: directory
+      loop:
+        - "{{ project_root }}/blue"
+        - "{{ project_root }}/green"
+        - "{{ project_root }}/production"
+        - "{{ project_root }}/logs"
